@@ -75,16 +75,16 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
   ### header + section 1: 
-  <img src="readme-images/BDS_header+section1.jpg.jpg" width="375px" alt="breakdown van de header en eerste section">
+  <img src="readme-images/BDS_header+section1.jpg" width="375px" alt="breakdown van de header en eerste section">
 
   ### section 2: 
-  <img src="readme-images/BDS_section2.jpg.jpg" width="375px" alt="breakdown van de tweede section">
+  <img src="readme-images/BDS_section2.jpg" width="375px" alt="breakdown van de tweede section">
 
   ### section 2 + section 3: 
-  <img src="readme-images/BDS_section2+3.jpg.jpg" width="375px" alt="breakdown van de tweede en derde section">
+  <img src="readme-images/BDS_section2+3.jpg" width="375px" alt="breakdown van de tweede en derde section">
 
   ### footer: 
-  <img src="readme-images/BDS_footer.png.jpg" width="375px" alt="breakdown van de footer">
+  <img src="readme-images/BDS_footer.png" width="375px" alt="breakdown van de footer">
 
 </details>
 
