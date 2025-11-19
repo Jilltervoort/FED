@@ -41,10 +41,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   #### Screenshot(s) van de eerste pagina (small screen): 
   Homepagina  
   <img src="readme-images/homepagina.jpg" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/homepagina_phone.jpg" width="375px" alt="omschrijving van de pagina">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   Detailpagina shop  
   <img src="readme-images/detailpaginaShop.jpg" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/detailpaginaShop_phone.jpg" width="375px" alt="omschrijving van de pagina">
  
 </details>
 
@@ -56,7 +58,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na test in 2<sup>e</sup> werkgroep</summary>
 
   ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen:
+  De dingen die mij waren opgevallen aan de hand van de toegankelijkheid test waren:
+
+- Na het proberen van de screenreader vond ik dat veel omschrijven voor de elementen die geen tekst bevatten, niet sprekend genoeg waren. Graag zou ik in mijn eigen website meer omschrijvende alt-tags willen laten terug komen.
+- De kleurcontrasten waren op sommige plekken te laag Hierdoor wordt het lastiger voor mensen met een visuele beperking om tekst te lezen.
+- Er is geen dark mode of high-contrast modus beschikbaar. Dit zou de toegankelijkheid van de website nog meer omhoog kunnen krijgen.
+- Verder is een het wel een rustige en overzichtelijke website om te zien. Er zijn bijvoorbeeld niet drukken animaties en werkt alles zoals het zou moeten doen. Ook vind ik dat de website goed semantisch correcte code doordat zij ook gebruik maken van H2tjes en H3tjes. 
 
 </details>
 
@@ -67,14 +74,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
-  ### de hele pagina: 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
+  ### header + section 1: 
+  <img src="readme-images/BDS_header+section1.jpg.jpg" width="375px" alt="breakdown van de header en eerste section">
 
-  ### dynamisch deel (bijv menu): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
+  ### section 2: 
+  <img src="readme-images/BDS_section2.jpg.jpg" width="375px" alt="breakdown van de tweede section">
 
-  ### wellicht nog een dynamisch deel (bijv filter): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
+  ### section 2 + section 3: 
+  <img src="readme-images/BDS_section2+3.jpg.jpg" width="375px" alt="breakdown van de tweede en derde section">
+
+  ### footer: 
+  <img src="readme-images/BDS_footer.png.jpg" width="375px" alt="breakdown van de footer">
 
 </details>
 
@@ -88,7 +98,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 1<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Ik ben al lekker bezig geweest met het coderen van mijn website. ik ben bewust bezig met de theorie die ik gebruik en begrijp ik ook goed wat ik aan het doen ben. Gelukkig zitten er dan ook elementen in die ik goed kan herbruiken en net even aanpassen voor elementen die later terug komen op de website, hierdoor ben ik al een eindje gekomen. Ik denk dat het tot nu toe mij goed afgaat!
 
 
   ### Agenda voor meeting
