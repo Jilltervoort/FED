@@ -1,31 +1,382 @@
-/**************/
-/* CSS REMEDY */
-/**************/
+
 *, *::after, *::before {
   box-sizing:border-box;  
 }
 
-
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text:#0E1218;
+	--color-background:#fff;
+	--border-artikel:#f1f1f3;
+	--color-h3:#d2a187;
+	--color-datum-tijd:#9fa0aa;
+
+	--hoofd-lettertype: "futura-pt", sans-serif;
+	--deco-lettertype: "fromage", sans-serif;
+}
+
+body {
+	display: block;
+	width: 100%;
+	margin: 0%;
+    padding: 0%;
+}
+
+/* BRON: https://www.a11yproject.com/posts/how-to-hide-content/ */
+h1 {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+/*-----*/
+
+h2 {
+	display: flex;
+	justify-content: center;
+	font-family: var(--deco-lettertype);
+	font-size: 1.6em;
+	font-weight: 400;
+	padding-bottom: 0.7em;
+}
+
+h3 {
+	margin: 0%;
+}
+
+h3 a{
+	font-family: var(--hoofd-lettertype);
+	font-weight: lighter;
+	color: var(--color-text);
+    text-decoration: none;
+}
+
+
+
+
+/*------------------*/
+/* -----header----- */
+/*------------------*/
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    position: fixed;
+	width: 100%;
+	z-index: 1000;
+	background-color: var(--color-background);
+}
+
+.header_nav_boven {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2em 0.4em 0em 0.4em;      
+    width: 100%;
+}
+
+.logo_home {
+    height: 50px;
+    width: 100%;
+}
+
+.winkelmand_home {
+    height: 40px;
+    width: 100%;
+}
+
+.header_nav_onder {
+	display: flex;
+    flex-direction: row;
+	align-items: center;
+    list-style-type: none;
+	overflow-x: scroll;
+	scrollbar-width: none;
+	background-color: var(--color-background);
+	padding: 0.7em 1.2em 0.7em 0em;
+	margin: 0%;
+}
+nav a {
+	display: block;
+	color: var(--color-text);
+	font-family: var(--hoofd-lettertype);
+	text-transform: uppercase;
+	font-size: 0.8em;
+	letter-spacing: 0.2em;
+	text-decoration: none;
+	padding-left: 1.8em;
+}
+
+/*-----------------------*/
+/* ---starterCarousel--- */
+/*-----------------------*/
+
+.starterCarousel {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding-top: 5em;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.starterCarousel ul {
+	padding: 0%;
+}
+
+.starterCarousel li {
+	display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    list-style-type: none;
+}
+
+.starterCarousel img {
+	grid-column-start: 1;
+    grid-row-start: 1;
+    width: 100%;
+    height: 21em;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.starter_info {
+	grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 2;
+    padding: 1.7em 1em 1em 1.5em;
+	background-color: #00000080;
+}
+
+.starter_info a {
+	color: white;
+	text-decoration: none;
+}
+
+.starter_info p {
+	color: white;
+	text-decoration: none;
+}
+
+
+/*---------------------*/
+/* -----actieKnop----- */
+/*---------------------*/
+
+.actie_knop {
+	display: flex;
+    align-items: center;
+}
+
+.actie_knop_pijltje {
+    width: 2.9em;
+    height: 2.9em;
+	border-radius: 5em;
+    border: 0.2em solid var(--border-artikel);
+	background-color: var(--color-background);
+	padding: 0.5em;
+}
+
+.actie_knop_tekst {
+	font-family: var(--hoofd-lettertype);
+	font-size: 1em;
+	color: var(--color-text);
+	text-decoration: none;
+	padding-left: 0.8em;
+}
+
+
+
+/*----------------------*/
+/* -----wilJeLezen----- */
+/*----------------------*/
+
+.wilJeLezen {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+	width: 100%;
+	padding-left: 1.2em;
+	padding-right: 1.2em;
+	padding-top: 9em;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.artikel_categorie {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: var(--color-h3);
+	margin: 0%;
+} 
+
+.artikel_datum_tijd {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.8em;
+	color: var(--color-datum-tijd);
+	padding: 0.7em 0em;
+	margin: 0%;
+}
+
+/* -----artikel_groot----- */
+
+.artikel_groot {
+	display: flex;
+	flex-direction: column;
+	border: 0.15em solid var(--border-artikel);
+	background-color: var(--color-background);
+}
+
+.artikel_groot img {
+	width: 373px;
+	height: 348px;
+	object-fit: cover;
+}
+
+.artikel_groot_info {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	padding: 1.5em;
+}
+
+.artikel_groot h3 a{
+	font-size: 1.1em;
+	padding: 0.6em 0em;
+}
+
+/* -----artikel_klein----- */
+
+.artikel_klein {
+	display: flex;
+	flex-direction: row;
+	border: 0.15em solid var(--border-artikel);
+	background-color: var(--color-background);
+}
+
+.artikel_klein img {
+	width: 170px;
+	height: 172px;
+	object-fit: cover;
+}
+
+.artikel_klein_info {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	padding: 1.2em 1.2em 0.5em 1.2em;
+}
+
+.artikel_klein h3 a{
+	font-size: 0.9em;
+}
+
+/* -----artikel_shopNu----- */
+
+.artikel_shopNu {
+	display: flex;
+	flex-direction: row;
+	border: 0.15em solid var(--border-artikel);
+	background-color: var(--color-background);
+}
+
+.artikel_shopNu img {
+	width: auto;
+	height: 190px;
+}
+
+.artikel_shopNu_info {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	padding: 1.2em 1.2em 0.5em 1.2em;
+}
+
+.artikel_shopNu h3 a {
+	font-size: 1.1em;
+}
+
+
+
+/*------------------------*/
+/* ---populairDezeWeek--- */
+/*------------------------*/
+
+.populairDezeWeek {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	width: 100%;
+	padding-left: 1.3em;
+	padding-right: 1.3em;
+	padding-top: 1.8em;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.populairDezeWeek h2 {
+	justify-content: start;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	margin: 0%;
+}
+
+.carousel_populair {
+	display: flex;
+	flex-direction: row;
+	gap: 0.7em;
+	overflow-x: scroll;
+	scrollbar-width: none;
+}
+
+/* -----artikel_populair----- */
+
+.artikel_populair {
+	display: flex;
+	flex-direction: column;
+	border: 0.15em solid var(--border-artikel);
+	background-color: var(--color-background);
+}
+
+.artikel_populair img{
+	width: 240px;
+	height: 155px;
+	object-fit: cover;
+}
+
+.artikel_populair_info {
+	display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+	height: 12em;
+	padding: 1.7em 1em 1em 1.5em;
+}
+
+.artikel_populair_info h3 {
+	font-size: 1.05em;
+	padding: 0.6em 0em;
+}
+
+.populair_knoppen {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
 
 
 
-/****************/
-/* JOUW STYLING */
-/****************/
 
-/* jouw code */
+
+
+
+
+
 
