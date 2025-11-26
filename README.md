@@ -86,6 +86,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### footer: 
   <img src="readme-images/BDS_footer.png" width="375px" alt="breakdown van de footer">
 
+  ### pagina 2: 
+  <img src="readme-images/BDS_pagina2.png" width="375px" alt="breakdown van de footer">
+
 </details>
 
 
