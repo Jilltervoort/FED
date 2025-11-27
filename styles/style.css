@@ -9,6 +9,9 @@
 	--border-artikel:#f1f1f3;
 	--color-h3:#d2a187;
 	--color-datum-tijd:#9fa0aa;
+	--footer-background: #0E1218;
+	--footer-text: #fff;
+	--footer-hr: #777a7d;
 
 	--hoofd-lettertype: "futura-pt", sans-serif;
 	--deco-lettertype: "fromage", sans-serif;
@@ -39,19 +42,17 @@ h2 {
 	font-family: var(--deco-lettertype);
 	font-size: 1.6em;
 	font-weight: 400;
-	padding-bottom: 0.7em;
 }
 
 h3 {
-	margin: 0%;
-}
-
-h3 a{
 	font-family: var(--hoofd-lettertype);
 	font-weight: lighter;
 	color: var(--color-text);
     text-decoration: none;
+	margin: 0%;
+	padding: 0.7em 0em;
 }
+
 
 
 
@@ -70,7 +71,7 @@ header {
 	background-color: var(--color-background);
 }
 
-.header_nav_boven {
+.header_boven {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,17 +79,17 @@ header {
     width: 100%;
 }
 
-.logo_home {
+.header_boven a:first-of-type img{
     height: 50px;
     width: 100%;
 }
 
-.winkelmand_home {
+.header_boven a:nth-of-type(2) img{
     height: 40px;
     width: 100%;
 }
 
-.header_nav_onder {
+.header_onder {
 	display: flex;
     flex-direction: row;
 	align-items: center;
@@ -99,15 +100,22 @@ header {
 	padding: 0.7em 1.2em 0.7em 0em;
 	margin: 0%;
 }
+
 nav a {
 	display: block;
 	color: var(--color-text);
 	font-family: var(--hoofd-lettertype);
 	text-transform: uppercase;
-	font-size: 0.8em;
-	letter-spacing: 0.2em;
+	font-size: 0.75em;
+	letter-spacing: 0.25em;
 	text-decoration: none;
-	padding-left: 1.8em;
+	padding-left: 1.9em;
+}
+
+nav a:hover {
+	text-decoration: underline;
+	text-decoration-thickness: 0.1em;
+	text-underline-offset: 0.5em;
 }
 
 /*-----------------------*/
@@ -117,14 +125,17 @@ nav a {
 .starterCarousel {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
 	padding-top: 5em;
 	margin-left: auto;
     margin-right: auto;
+	overflow: hidden;
 }
 
 .starterCarousel ul {
+	display:flex;
+	flex-direction: row;
 	padding: 0%;
+	transition: transform 0.7s ease-in;
 }
 
 .starterCarousel li {
@@ -132,33 +143,49 @@ nav a {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     list-style-type: none;
+	min-width: 100vw;      
+    height: 21.5em;
 }
 
 .starterCarousel img {
 	grid-column-start: 1;
-    grid-row-start: 1;
-    width: 100%;
-    height: 21em;
+    grid-row-start: 1;   
+    height: 21.5em;
+	width: 100%;  
     object-fit: cover;
     z-index: 1;
 }
 
-.starter_info {
+.starterCarousel ul div {
 	grid-column-start: 1;
     grid-row-start: 1;
     z-index: 2;
-    padding: 1.7em 1em 1em 1.5em;
+    padding: 4.5em 3.5em 2.5em 3.5em;
 	background-color: #00000080;
 }
 
-.starter_info a {
+.starterCarousel h2 {
+	color: var(--color-background);
+}
+
+.starterCarousel div a {
+	font-size: 0.9em;
 	color: white;
 	text-decoration: none;
 }
 
-.starter_info p {
-	color: white;
-	text-decoration: none;
+.starterCarousel p:first-of-type {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.7em;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: var(--color-background);
+	margin: 0%;
+} 
+
+.starterCarousel .button_knoppen {
+	padding: 0.2em 1.5em;
 }
 
 
@@ -166,26 +193,30 @@ nav a {
 /* -----actieKnop----- */
 /*---------------------*/
 
+
 .actie_knop {
-	display: flex;
-    align-items: center;
+    display: flex;             
+    align-items: center;     
+    gap: 0.5em;                 
+    text-decoration: none;      
+    font-family: var(--hoofd-lettertype);
+    font-size: 1em;
+    color: var(--color-text);
+	
 }
 
-.actie_knop_pijltje {
-    width: 2.9em;
-    height: 2.9em;
-	border-radius: 5em;
+.actie_knop img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
     border: 0.2em solid var(--border-artikel);
 	background-color: var(--color-background);
-	padding: 0.5em;
+    padding: 0.4em;
+    object-fit: contain;      
 }
 
-.actie_knop_tekst {
-	font-family: var(--hoofd-lettertype);
-	font-size: 1em;
-	color: var(--color-text);
-	text-decoration: none;
-	padding-left: 0.8em;
+.actie_knop img:hover {
+	background-color: var(--border-artikel);
 }
 
 
@@ -198,15 +229,19 @@ nav a {
 	display: flex;
 	flex-direction: column;
 	gap: 0.8em;
-	width: 100%;
+	width: 100%;  
 	padding-left: 1.2em;
 	padding-right: 1.2em;
-	padding-top: 9em;
+	padding-top: 3em;
 	margin-left: auto;
     margin-right: auto;
 }
 
-.artikel_categorie {
+.wilJeLezen a {
+	text-decoration: none;  
+}
+
+.wilJeLezen p:first-of-type {
 	font-family: var(--hoofd-lettertype);
 	font-size: 0.8em;
 	text-transform: uppercase;
@@ -216,11 +251,11 @@ nav a {
 	margin: 0%;
 } 
 
-.artikel_datum_tijd {
+.wilJeLezen p:nth-of-type(2) {
 	font-family: var(--hoofd-lettertype);
 	font-size: 0.8em;
 	color: var(--color-datum-tijd);
-	padding: 0.7em 0em;
+	padding: 0.3em 0em 0.8em 0em;
 	margin: 0%;
 }
 
@@ -234,21 +269,20 @@ nav a {
 }
 
 .artikel_groot img {
-	width: 373px;
+	width: auto;
 	height: 348px;
 	object-fit: cover;
 }
 
-.artikel_groot_info {
+.artikel_groot div {
 	display: flex;
     flex-direction: column;
     justify-content: space-between;
 	padding: 1.5em;
 }
 
-.artikel_groot h3 a{
+.artikel_groot h3 {
 	font-size: 1.1em;
-	padding: 0.6em 0em;
 }
 
 /* -----artikel_klein----- */
@@ -266,42 +300,50 @@ nav a {
 	object-fit: cover;
 }
 
-.artikel_klein_info {
+.artikel_klein div {
 	display: flex;
     flex-direction: column;
     justify-content: space-between;
-	padding: 1.2em 1.2em 0.5em 1.2em;
+	padding: 1.1em 1em 0.5em 1.1em;
 }
 
-.artikel_klein h3 a{
+.artikel_klein h3 {
 	font-size: 0.9em;
 }
 
 /* -----artikel_shopNu----- */
 
-.artikel_shopNu {
-	display: flex;
-	flex-direction: row;
-	border: 0.15em solid var(--border-artikel);
-	background-color: var(--color-background);
-}
-
-.artikel_shopNu img {
-	width: auto;
-	height: 190px;
-}
-
-.artikel_shopNu_info {
+.section_shopNu {
 	display: flex;
     flex-direction: column;
-    justify-content: space-between;
-	padding: 1.2em 1.2em 0.5em 1.2em;
+    gap: 0.5em; 
+    padding: 0;
 }
 
-.artikel_shopNu h3 a {
-	font-size: 1.1em;
+.section_shopNu li {
+	display: flex;
+	justify-content: flex-start;
+	list-style-type: none;
+	border: 0.15em solid var(--border-artikel);
+	background-color: var(--color-background);	
 }
 
+.section_shopNu div {
+	display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+	padding: 1.2em 1.2em 1em 1.2em;
+}
+
+.section_shopNu div h3 {
+	font-size: 1.05em;
+}
+
+.img_shopNu {
+	width: auto;
+	height: 190px;
+	margin-left: auto;
+}
 
 
 /*------------------------*/
@@ -316,8 +358,13 @@ nav a {
 	padding-left: 1.3em;
 	padding-right: 1.3em;
 	padding-top: 1.8em;
+	padding-bottom: 7em;
 	margin-left: auto;
     margin-right: auto;
+}
+
+.populairDezeWeek a {
+	text-decoration: none;  
 }
 
 .populairDezeWeek h2 {
@@ -335,22 +382,38 @@ nav a {
 	scrollbar-width: none;
 }
 
-/* -----artikel_populair----- */
+.populairDezeWeek p:first-of-type {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: var(--color-h3);
+	margin: 0%;
+} 
 
-.artikel_populair {
+.populairDezeWeek p:nth-of-type(2) {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.8em;
+	color: var(--color-datum-tijd);
+	padding: 0.7em 0em;
+	margin: 0%;
+}
+
+.populairDezeWeek article {
 	display: flex;
 	flex-direction: column;
 	border: 0.15em solid var(--border-artikel);
 	background-color: var(--color-background);
 }
 
-.artikel_populair img{
-	width: 240px;
-	height: 155px;
+.populairDezeWeek article img{
+	width: 260px;
+	height: 160px;
 	object-fit: cover;
 }
 
-.artikel_populair_info {
+.populairDezeWeek article div {
 	display: flex;
     flex-direction: column;
 	justify-content: space-between;
@@ -358,16 +421,156 @@ nav a {
 	padding: 1.7em 1em 1em 1.5em;
 }
 
-.artikel_populair_info h3 {
+.populairDezeWeek div h3 {
 	font-size: 1.05em;
 	padding: 0.6em 0em;
 }
 
-.populair_knoppen {
+
+
+
+.button_knoppen {
 	display: flex;
     justify-content: space-between;
     align-items: center;
+	padding-top: 1em;
 }
+
+.button_knoppen button {
+	border: none;
+	background: none;
+	padding: 0%;
+}
+
+.button_knoppen img{
+	width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 0.2em solid var(--border-artikel);
+    background-color: var(--color-background);
+    padding: 0.5em;
+    object-fit: contain;   
+}
+
+.button_knoppen img:hover {
+	background-color: var(--border-artikel);
+	scale: 1.05;
+}
+
+
+
+
+
+footer {
+	background-color: var(--footer-background);
+	color: var(--footer-text);
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	padding: 3.75em 2em;
+}
+
+summary {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+}
+
+summary img {
+	width: 2.3em;
+	height: auto;
+	transition: transform 0.5s ease;
+}
+
+details[open] summary img {
+    transform: scaleY(-1);
+}
+
+footer a {
+	color: var(--footer-text);
+	font-family: var(--hoofd-lettertype);
+	text-decoration: none;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 1.3em 0em;
+    margin: 0em;
+}
+
+footer ul li {
+	padding: 1.3em 2em;
+}
+
+hr { 
+	border: none;
+    background:var(--footer-hr);
+    opacity: 0.3;
+	width: 7em;
+	height: 0.15em;
+    margin: 2em 0em;
+  } 
+
+.footer_socials {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-items: center;
+	list-style-type: none;
+	gap: 1.8em;
+}
+
+.footer_socials li {
+	padding: 0.5em 0em;
+	margin: 0em;
+}
+
+.footer_socials img {
+	width: 3.5em;
+	height: auto;
+}
+
+.footer_onder a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--color-datum-tijd);
+	padding-top: 0.2em;
+	padding-bottom: 2em;
+}
+
+.footer_onder a:last-of-type {
+	padding-top: 1.1em;
+}
+
+
+@media (width >= 749px) {
+	.starterCarousel li {
+		min-width: 100vw;      
+    	height: 32.5em; 
+	}
+	.starterCarousel .img_carousel {
+		height: 32.5em;
+	}
+	.starterCarousel ul div {
+		padding: 7.5em 11.5em 2em 11.5em;
+	}
+	.starterCarousel p:first-of-type {
+		font-size: 0.8em;
+	}
+	.starterCarousel h2 {
+		font-size: 2.3em;
+	}
+	.starterCarousel div a {
+		font-size: 1em;
+	}
+
+	
+}
+
+
 
 
 
