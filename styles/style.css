@@ -9,6 +9,7 @@
 	--border-artikel:#f1f1f3;
 	--color-h3:#d2a187;
 	--color-datum-tijd:#9fa0aa;
+	--color-shop-text: #444444;
 	--footer-background: #0E1218;
 	--footer-text: #fff;
 	--footer-hr: #777a7d;
@@ -24,8 +25,9 @@ body {
     padding: 0%;
 }
 
+
 /* BRON: https://www.a11yproject.com/posts/how-to-hide-content/ */
-h1 {
+.starterCarousel h1 {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
@@ -40,8 +42,8 @@ h2 {
 	display: flex;
 	justify-content: center;
 	font-family: var(--deco-lettertype);
-	font-size: 1.6em;
 	font-weight: 400;
+	text-align: center;
 }
 
 h3 {
@@ -52,8 +54,6 @@ h3 {
 	margin: 0%;
 	padding: 0.7em 0em;
 }
-
-
 
 
 
@@ -71,7 +71,7 @@ header {
 	background-color: var(--color-background);
 }
 
-.header_boven {
+header div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,17 +79,17 @@ header {
     width: 100%;
 }
 
-.header_boven a:first-of-type img{
+header div a:first-of-type img{
     height: 50px;
     width: 100%;
 }
 
-.header_boven a:nth-of-type(2) img{
+header div a:nth-of-type(2) img{
     height: 40px;
     width: 100%;
 }
 
-.header_onder {
+nav ul{
 	display: flex;
     flex-direction: row;
 	align-items: center;
@@ -101,7 +101,7 @@ header {
 	margin: 0%;
 }
 
-nav a {
+nav li a {
 	display: block;
 	color: var(--color-text);
 	font-family: var(--hoofd-lettertype);
@@ -112,7 +112,7 @@ nav a {
 	padding-left: 1.9em;
 }
 
-nav a:hover {
+nav li a:hover {
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: 0.5em;
@@ -166,6 +166,7 @@ nav a:hover {
 
 .starterCarousel h2 {
 	color: var(--color-background);
+	text-align: start;
 }
 
 .starterCarousel div a {
@@ -190,7 +191,7 @@ nav a:hover {
 
 
 /*---------------------*/
-/* -----actieKnop----- */
+/* ------Knoppen------ */
 /*---------------------*/
 
 
@@ -203,7 +204,7 @@ nav a:hover {
     font-size: 1em;
     color: var(--color-text);
 	
-}
+} 
 
 .actie_knop img {
     width: 38px;
@@ -217,6 +218,95 @@ nav a:hover {
 
 .actie_knop img:hover {
 	background-color: var(--border-artikel);
+}
+
+
+
+.starter_knoppen {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding-top: 1em;
+}
+
+.starter_knoppen button {
+	border: none;
+	background: none;
+	padding: 0%;
+}
+
+.starter_knoppen img{
+	width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 0.2em solid var(--border-artikel);
+    background-color: var(--color-background);
+    padding: 0.5em;
+    object-fit: contain;   
+}
+
+.starter_knoppen img:hover {
+	background-color: var(--border-artikel);
+	scale: 1.05;
+}
+
+
+
+.populair_knoppen {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding-top: 1em;
+}
+
+.populair_knoppen button {
+	border: none;
+	background: none;
+	padding: 0%;
+}
+
+.populair_knoppen img{
+	width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 0.2em solid var(--border-artikel);
+    background-color: var(--color-background);
+    padding: 0.5em;
+    object-fit: contain;   
+}
+
+.populair_knoppen img:hover {
+	background-color: var(--border-artikel);
+	scale: 1.05;
+}
+
+
+.magazines_knoppen {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	padding-top: 1em;
+}
+
+.magazines_knoppen button {
+	border: none;
+	background: none;
+	padding: 0%;
+}
+
+.magazines_knoppen img{
+	width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 0.2em solid var(--border-artikel);
+    background-color: var(--color-background);
+    padding: 0.5em;
+    object-fit: contain;   
+}
+
+.magazines_knoppen img:hover {
+	background-color: var(--border-artikel);
+	scale: 1.05;
 }
 
 
@@ -246,7 +336,7 @@ nav a:hover {
 	font-size: 0.8em;
 	text-transform: uppercase;
 	font-weight: bold;
-	line-height: 1.6em;
+	line-height: 1.8em;
 	color: var(--color-h3);
 	margin: 0%;
 } 
@@ -308,7 +398,7 @@ nav a:hover {
 }
 
 .artikel_klein h3 {
-	font-size: 0.9em;
+	font-size: 1em;
 }
 
 /* -----artikel_shopNu----- */
@@ -318,6 +408,7 @@ nav a:hover {
     flex-direction: column;
     gap: 0.5em; 
     padding: 0;
+	margin: 0;
 }
 
 .section_shopNu li {
@@ -339,7 +430,7 @@ nav a:hover {
 	font-size: 1.05em;
 }
 
-.img_shopNu {
+.section_shopNu li > img{
 	width: auto;
 	height: 190px;
 	margin-left: auto;
@@ -355,10 +446,7 @@ nav a:hover {
 	flex-direction: column;
 	gap: 0.5em;
 	width: 100%;
-	padding-left: 1.3em;
-	padding-right: 1.3em;
-	padding-top: 1.8em;
-	padding-bottom: 7em;
+	padding: 1.8em 1.3em 2em 1.3em;
 	margin-left: auto;
     margin-right: auto;
 }
@@ -405,6 +493,7 @@ nav a:hover {
 	flex-direction: column;
 	border: 0.15em solid var(--border-artikel);
 	background-color: var(--color-background);
+	
 }
 
 .populairDezeWeek article img{
@@ -426,39 +515,190 @@ nav a:hover {
 	padding: 0.6em 0em;
 }
 
+/*------------------------*/
+/* -----andcOrginals----- */
+/*------------------------*/
 
-
-
-.button_knoppen {
+.andc_originals {
 	display: flex;
-    justify-content: space-between;
-    align-items: center;
-	padding-top: 1em;
+	flex-direction: column;
+	gap: 0.5em;
+	width: 100%;
+	padding: 1.8em 1.3em 2em 1.3em;
+	margin-left: auto;
+    margin-right: auto;
 }
 
-.button_knoppen button {
+.andc_originals a {
+	text-decoration: none;  
+}
+
+.carousel_originals {
+	display: flex;
+	flex-direction: row;
+	gap: 0.7em;
+	overflow-x: scroll;
+	scrollbar-width: none;
+}
+
+.andc_originals article{
+	display: flex;
+	flex-direction: column;
+	border: 0.15em solid var(--border-artikel);
+	background-color: var(--color-background);
+	min-width: 20em;
+	height: 31.5em;
+	padding: 2.5em;
+}
+
+.andc_originals p:first-of-type {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.8em;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: var(--color-h3);
+	margin: 0%;
+} 
+
+.andc_originals h3 {
+	font-family: var(--deco-lettertype);
+	font-size: 1.6em;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	padding: 0em;
+}
+
+.andc_originals a {
+	padding: 1em 0em;
+}
+
+.andc_originals article > img{
+	align-self: flex-end;
+	width: 13em;
+	height: 14em;
+	object-fit: cover;
+}
+
+/*-------------------------*/
+/* ---section_magazines--- */
+/*-------------------------*/
+
+.section_magazines {
+	display: flex;
+	flex-direction: column;
+	background-color: #f6efeb;
+	padding: 0em 1.3em 3em 1.3em;
+}
+
+.section_magazines h2 {
+	margin: 1.2em 0em 0.2em 0em;
+}
+
+.section_magazines > p {
+	align-self: center;
+	font-family: var(--hoofd-lettertype);
+	margin: 0em;
+
+}
+
+.carousel_magazines {
+	display: flex;
+	flex-direction: row;
+	gap: 0.8em;
+	overflow-x: scroll;
+	scrollbar-width: none;
+	scroll-behavior: smooth;
+}
+
+.section_magazines ul {
+	padding: 2em 0em 0.5em 1.1em;
+}
+
+.section_magazines li {
+	background-color: var(--color-background);
+	list-style-type: none;
+}
+
+.section_magazines li a {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	height: 23.5em;
+}
+
+.section_magazines li a > img {
+	height: 11em;
+	width: 11em;
+	padding: 0.2em;
+}
+
+.section_magazines li a > p {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.75em;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.6em;
+	color: var(--color-datum-tijd);
+	margin: 0%;
+	padding: 2.1em 0em 0em 1.4em;
+}
+
+.section_magazines h3 {
+	font-size: 1.2em;
+	padding: 0em 0.8em 0em 0.8em;
+}
+
+.section_magazines button {
 	border: none;
 	background: none;
-	padding: 0%;
+	padding: 0em;
+	transition: 0.4s ease-in-out;
 }
 
-.button_knoppen img{
-	width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 0.2em solid var(--border-artikel);
-    background-color: var(--color-background);
-    padding: 0.5em;
-    object-fit: contain;   
-}
-
-.button_knoppen img:hover {
-	background-color: var(--border-artikel);
+.section_magazines button:hover {
 	scale: 1.05;
 }
 
+.section_magazines button span {
+	display: none;
+}
+
+.section_magazines div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: auto;
+	padding: 0em 0.8em 0.6em 1.2em;
+}
+
+.section_magazines div img {
+	width: auto;
+	height: 3.5em;
+}
+
+.section_magazines li div > p {
+	display: inline;
+	color: var(--color-text);
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.8em;
+	vertical-align: top;
+	
+}
+
+.section_magazines li div > p::first-letter {
+	font-size: 2em; 
+	vertical-align: top;
+   
+}
 
 
+
+/*----------------------*/
+/* -------footer------- */
+/*----------------------*/
 
 
 footer {
@@ -473,7 +713,7 @@ footer {
 
 summary {
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -482,6 +722,10 @@ summary img {
 	width: 2.3em;
 	height: auto;
 	transition: transform 0.5s ease;
+}
+
+summary h4 {
+font-weight: lighter;
 }
 
 details[open] summary img {
@@ -546,13 +790,81 @@ hr {
 }
 
 
+.shopPagina header {
+	display: flex;
+	flex-direction: row;
+	position: sticky;
+}
+.shopPagina header button {
+	height: 4em;
+	width: 4em;
+}
+.shopPagina header button img {
+	height: 4em;
+	width: 4em;
+}
+
+.shopPagina ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	font-size: 12px;
+	background-color: var(--border-artikel);
+	list-style-type: none;
+	height: 2.8em;
+	padding: 0%;
+}
+
+.shopPagina ul li a {
+	font-family: "Jost", arial, sans-serif;
+	font-size: 0.9em;
+	color: var(--color-text);
+	text-decoration: none;
+	border-color: ;
+	border-right: 1.3px solid var(--color-text);
+    display: inline-block;
+	padding: 0em 1.4em 0em 1em;
+}
+.shopPagina ul li:nth-child(2) a  {
+	font-weight: bold;
+}
+
+.shopPagina section > img {
+	display: block;
+	width: 15em;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3.5em;
+	margin-bottom: 3.5em;
+}
+
+.shopPagina section div {
+	padding: 0.5em
+}
+
+.shopPagina section a:first-of-type {
+	color: var(--color-shop-text);
+	text-decoration: none;
+}
+
+.shopPagina h1{
+	font-family: "Poppins", sans-serif;
+}
+
+
+
+
+
+
 @media (width >= 749px) {
 	.starterCarousel li {
 		min-width: 100vw;      
-    	height: 32.5em; 
+    	height: 31em; 
 	}
-	.starterCarousel .img_carousel {
-		height: 32.5em;
+	.starterCarousel ul li > img {
+		height: 31em;
 	}
 	.starterCarousel ul div {
 		padding: 7.5em 11.5em 2em 11.5em;
@@ -566,6 +878,80 @@ hr {
 	.starterCarousel div a {
 		font-size: 1em;
 	}
+
+	.wilJeLezen h2 {
+		font-size: 2.3em;
+	}
+	.artikel_groot {
+		flex-direction: row;
+	}
+	.artikel_groot img {
+		width: 21.5em;
+		height: 12.7em;
+	}
+	.artikel_groot div {
+		padding: 1.9em 3em 1.1em 4em;
+	}
+	.artikel_groot h3 {
+		font-size: 1.3em;
+		font-weight: bold;
+	}
+	.artikel_klein img {
+		width: 12em;
+		height: 8em;
+	}
+	.artikel_klein div {
+		padding: 0.8em 2.1em 0.2em 1.8em;
+	}
+	.artikel_klein h3 {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	.section_shopNu {
+		display: grid;
+		grid-template-columns:1fr 1fr;
+		gap: 0.4em 0.7em; 
+	}
+	.section_shopNu div {
+		padding: 1.6em 2em 0.9em 1.5em;
+	}
+	.section_shopNu div h3 {
+		font-size: 1.1em;
+	}
+	.section_shopNu li > img {
+		height: 12.5em;
+	}
+
+	.populairDezeWeek {
+		padding: 5em 1.3em 7em 2em;
+	}
+	.populairDezeWeek h2 {
+		justify-content: center;
+		font-size: 2.3em;
+	}
+	.populairDezeWeek article img {
+		width: 20em;
+	}
+	.populairDezeWeek article div {
+		padding: 1.6em 1.5em 1.6em 1.2em;
+	}
+	.populairDezeWeek div h3 {
+		font-size: 1em;
+		font-weight: bold;
+		padding: 0em;
+	}
+
+
+	
+	
+	
+
+	
+	
+    
+
+
+
 
 	
 }
