@@ -8,17 +8,20 @@
 	--color-background:#fff;
 	--border-artikel:#f1f1f3;
 	--color-h3:#d2a187;
-	--color-datum-tijd:#9fa0aa;
+	--color-datum-tijd:#767676;
 	--color-shop-text: #444444;
+	--color-shop-border: #dddddd;
 	--footer-background: #0E1218;
 	--footer-text: #fff;
 	--footer-hr: #777a7d;
 
-	--hoofd-lettertype: "futura-pt", sans-serif;
-	--deco-lettertype: "fromage", sans-serif;
+	--hoofd-lettertype: "futura-pt", arial, sans-serif;
+	--deco-lettertype: "fromage", arial, sans-serif;
+	--shopDeco-lettertype: "Poppins", arial, sans-serif;
 }
 
 body {
+	background-color: var(--color-background);
 	display: block;
 	width: 100%;
 	margin: 0%;
@@ -61,35 +64,45 @@ h3 {
 /* -----header----- */
 /*------------------*/
 
-header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.headerHome {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	align-items: center;
     position: fixed;
 	width: 100%;
+	height: 6em;
 	z-index: 1000;
 	background-color: var(--color-background);
+	padding: 0; 
 }
 
-header div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.2em 0.4em 0em 0.4em;      
-    width: 100%;
+.headerHome a:first-of-type {  
+    grid: 1 / 2;
 }
 
-header div a:first-of-type img{
-    height: 50px;
-    width: 100%;
+.headerHome nav {               
+    grid-column: 1 / 3;         
+    grid-row: 2 / 3;
 }
 
-header div a:nth-of-type(2) img{
-    height: 40px;
-    width: 100%;
+.headerHome a:nth-of-type(2) {  
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+	justify-self: end;
 }
 
-nav ul{
+.headerHome a:first-of-type img{
+    height: auto;
+    width: 3.5em;
+}
+
+.headerHome a:nth-of-type(2) img{
+    height: auto;
+    width: 3em;
+}
+
+.headerHome nav ul{
 	display: flex;
     flex-direction: row;
 	align-items: center;
@@ -97,11 +110,11 @@ nav ul{
 	overflow-x: scroll;
 	scrollbar-width: none;
 	background-color: var(--color-background);
-	padding: 0.7em 1.2em 0.7em 0em;
-	margin: 0%;
+	padding: 0em 0em 1em 0em;
+	margin: 0;
 }
 
-nav li a {
+.headerHome nav li a {
 	display: block;
 	color: var(--color-text);
 	font-family: var(--hoofd-lettertype);
@@ -112,7 +125,7 @@ nav li a {
 	padding-left: 1.9em;
 }
 
-nav li a:hover {
+.headerHome nav li a:hover {
 	text-decoration: underline;
 	text-decoration-thickness: 0.1em;
 	text-underline-offset: 0.5em;
@@ -185,7 +198,7 @@ nav li a:hover {
 	margin: 0%;
 } 
 
-.starterCarousel .button_knoppen {
+.starterCarousel .starter_knoppen {
 	padding: 0.2em 1.5em;
 }
 
@@ -382,6 +395,7 @@ nav li a:hover {
 	flex-direction: row;
 	border: 0.15em solid var(--border-artikel);
 	background-color: var(--color-background);
+	margin-top: 0.7em;
 }
 
 .artikel_klein img {
@@ -536,6 +550,7 @@ nav li a:hover {
 .carousel_originals {
 	display: flex;
 	flex-direction: row;
+	justify-content: start;
 	gap: 0.7em;
 	overflow-x: scroll;
 	scrollbar-width: none;
@@ -546,8 +561,8 @@ nav li a:hover {
 	flex-direction: column;
 	border: 0.15em solid var(--border-artikel);
 	background-color: var(--color-background);
-	min-width: 20em;
-	height: 31.5em;
+	width: 25em;
+	height: 35em;
 	padding: 2.5em;
 }
 
@@ -564,9 +579,6 @@ nav li a:hover {
 .andc_originals h3 {
 	font-family: var(--deco-lettertype);
 	font-size: 1.6em;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3;
 	overflow: hidden;
 	padding: 0em;
 }
@@ -622,20 +634,20 @@ nav li a:hover {
 	list-style-type: none;
 }
 
-.section_magazines li a {
+.section_magazines li {
 	display: flex;
 	flex-direction: column;
 	text-decoration: none;
 	height: 23.5em;
 }
 
-.section_magazines li a > img {
+.section_magazines li > img {
 	height: 11em;
 	width: 11em;
 	padding: 0.2em;
 }
 
-.section_magazines li a > p {
+.section_magazines li > p {
 	font-family: var(--hoofd-lettertype);
 	font-size: 0.75em;
 	text-transform: uppercase;
@@ -702,6 +714,8 @@ nav li a:hover {
 
 
 footer {
+	display: flex;
+	flex-direction: column;
 	background-color: var(--footer-background);
 	color: var(--footer-text);
 	font-family: var(--hoofd-lettertype);
@@ -725,7 +739,10 @@ summary img {
 }
 
 summary h4 {
-font-weight: lighter;
+	font-weight: lighter;
+	border-bottom: 0.15em solid #333333;
+	width: 7em;
+	padding: 0em 0em 2em 0em;
 }
 
 details[open] summary img {
@@ -748,16 +765,7 @@ footer ul li {
 	padding: 1.3em 2em;
 }
 
-hr { 
-	border: none;
-    background:var(--footer-hr);
-    opacity: 0.3;
-	width: 7em;
-	height: 0.15em;
-    margin: 2em 0em;
-  } 
-
-.footer_socials {
+footer div > ul {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -766,17 +774,22 @@ hr {
 	gap: 1.8em;
 }
 
-.footer_socials li {
+footer div > ul li {
 	padding: 0.5em 0em;
 	margin: 0em;
 }
 
-.footer_socials img {
+footer div > ul img {
 	width: 3.5em;
 	height: auto;
 }
 
-.footer_onder a {
+footer div:last-of-type {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+footer div:last-of-type a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -784,27 +797,160 @@ hr {
 	padding-top: 0.2em;
 	padding-bottom: 2em;
 }
-
-.footer_onder a:last-of-type {
-	padding-top: 1.1em;
+footer div:last-of-type p {
+	color: var(--color-datum-tijd);
 }
 
+
+
+
+/*--------------------------*/
+/* -------headerShop------- */
+/*--------------------------*/
 
 .shopPagina header {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 	position: sticky;
-}
-.shopPagina header button {
-	height: 4em;
-	width: 4em;
-}
-.shopPagina header button img {
-	height: 4em;
-	width: 4em;
+	background-color: var(--color-background);
+	padding: 0em 1em 0em 0.3em;
 }
 
-.shopPagina ul{
+.shopPagina header button {
+	border: none;
+	background-color: var(--color-background);
+	padding: 0;
+}
+
+.shopPagina header > a {
+	order: 3;
+	margin-left: auto;
+	margin-right: auto;
+}
+.shopPagina header > a img{
+	width: 3.5em;
+}
+
+.shopPagina header > button:nth-of-type(1) {
+    order: 1;
+}
+.shopPagina header > button:nth-of-type(1) img{
+	height: 3.2em;
+	width: auto;
+}
+
+.shopPagina header > button:nth-of-type(2) {
+    order: 2;
+}
+.shopPagina header > button:nth-of-type(2) img{
+	height: 3.2em;
+	width: auto;
+}
+
+.shopPagina header > button:nth-of-type(3) {
+    order: 4;
+}
+.shopPagina header > button:nth-of-type(3) img{
+    height: 2.5em;
+	width: auto;
+}
+
+.shopPagina header > button:nth-of-type(4) {
+    display: none;
+}
+.shopPagina header > button:nth-of-type(4) img{
+    height: 2.2em;
+	width: auto;
+}
+
+.shopPagina header > button:nth-of-type(5) {
+    order: 5;
+	padding-left: 1.2em;
+}
+.shopPagina header > button:nth-of-type(5) img{
+    height: 2em;
+	width: auto;
+}
+
+
+
+.shopPagina header nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.shopPagina header nav {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	font-family: var(--hoofd-lettertype);
+	font-weight: lighter;
+	background-color: var(--color-background);
+	width: 18em;
+	translate:-100% 0%;
+	transition:all .3s ease-in-out;
+	left:0;
+  	right:0;
+  	top:0;
+  	bottom:0;
+}
+
+.shopPagina header nav.toonMenu {
+	translate: 0% 0%;
+}
+
+.shopPagina header nav button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-family: var(--hoofd-lettertype);
+	font-size: 1em;
+	background-color: var(--border-artikel);
+	height: 2.6em;
+	width: 18em;
+}
+
+.shopPagina header nav button img{
+	height: 2.4em;
+	width: 2.4em;
+}
+
+.shopPagina header nav details ul {
+	background-color: var(--border-artikel);
+	margin: 0;
+}
+
+.shopPagina nav details img {
+	margin-right: 1em;
+}
+
+.shopPagina header ul li{
+	border-bottom: 1px solid var(--border-artikel);
+}
+
+.shopPagina header  ul li:nth-child(3) {
+    border-bottom: 0.3em solid var(--border-artikel);
+}
+
+.shopPagina header nav a {
+	display: block;
+	font-size: 0.85em;
+	font-weight: lighter;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--color-text);
+	padding: 0.9em;
+}
+
+/*---------------------------*/
+/* -------breadcrumbs------- */
+/*---------------------------*/
+
+.shopPagina main > ul:first-of-type{
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
@@ -813,21 +959,39 @@ hr {
 	background-color: var(--border-artikel);
 	list-style-type: none;
 	height: 2.8em;
-	padding: 0%;
+	width: 100%;
+	padding: 0;
+	margin: 0em 0em 1em 0em;
 }
 
-.shopPagina ul li a {
-	font-family: "Jost", arial, sans-serif;
-	font-size: 0.9em;
+.shopPagina main > ul:first-of-type li a  {
+	font-family: var(--hoofd-lettertype);
 	color: var(--color-text);
 	text-decoration: none;
-	border-color: ;
-	border-right: 1.3px solid var(--color-text);
     display: inline-block;
 	padding: 0em 1.4em 0em 1em;
 }
-.shopPagina ul li:nth-child(2) a  {
+
+.shopPagina main ul li:nth-child(1) a  {
+	padding-left: 1.2em;
+	font-size: 1.2em;
+	border-right: 1.3px solid var(--color-text);
+}
+
+.shopPagina main ul li:nth-child(2) a  {
 	font-weight: bold;
+	font-size: 1.2em;
+}
+
+
+/*---------------------------*/
+/* -------sectionShop------- */
+/*---------------------------*/
+
+.shopPagina section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .shopPagina section > img {
@@ -841,24 +1005,201 @@ hr {
 }
 
 .shopPagina section div {
-	padding: 0.5em
+	padding: 1em;
 }
 
 .shopPagina section a:first-of-type {
+	font-family: var(--hoofd-lettertype);
 	color: var(--color-shop-text);
 	text-decoration: none;
+	font-size: 0.9em;
+	transition: all .3s ease-in-out;
+}
+
+.shopPagina section a:first-of-type:hover {
+	color: #d2a187;
+	opacity: 0.8;
 }
 
 .shopPagina h1{
-	font-family: "Poppins", sans-serif;
+	font-family: "Poppins", arial, sans-serif;
+	font-size: 1.1em;
+	font-weight: 600;
+	margin: 0em;
+}
+
+.shopPagina p {
+	font-family: var(--hoofd-lettertype);
+}
+
+.shopPagina section > div > p:nth-of-type(1) {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.75em;
+	font-weight: 600;
+}
+
+.shopPagina section > div > button:first-of-type {
+	display: flex;
+    align-items: center;   
+    justify-content: center;
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.85em;
+	color: var(--color-shop-text);
+	border: none;
+	background: none;
+	padding: 1.8em 0em 1.5em 0em;
+	transition: all .3s ease-in-out;
+}
+
+.shopPagina section > div > button:first-of-type img{
+	height: 1.2em;
+	width: auto;
+	padding-right: 0.5em;
+}
+
+.shopPagina section > div > button:first-of-type:hover {
+	opacity: 0.7;
+}
+
+.shopPagina section > div > div {
+    display: flex;
+    flex-direction: row;
+	padding: 0em;
+}
+
+/* -------Knoppen------- */
+
+.shopButton_aantal {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+    justify-content: center;
+	border: 1px solid var(--color-shop-border);
+	gap: 1.5em;
+	width: 6em;
+	height: 2.5em;
+}
+.shopButton_aantal button{
+	font-size: 1em;
+	border: none;
+	background: none;
+	padding: 0em;
+	margin: 0em;
+}
+
+.shopPagina section > div > div > button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+    justify-content: center;
+	border: 1px solid var(--color-text);
+	background-color: var(--color-text);
+	color: var(--color-background);
+	font-family: var(--hoofd-lettertype);
+	text-transform: uppercase;
+	padding: 0.85em 2em;
+	margin-left: 0.8em;
+	transition: all .3s ease-in-out;
+}
+
+.shopPagina section > div > div > button:hover {
+	background-color: var(--color-background);
+	color: var(--color-text);
+	border: 1px solid var(--color-text);
+}
+
+/* -------teksten------- */
+
+.shopPagina section details {
+	padding: 1em 0em;
+	width: auto;
+}
+
+.shopPagina section details p {
+	font-weight: lighter;
+}
+
+.shopPagina summary img {
+	width: 1.2em;
+	height: auto;
+	transition: transform 0.5s ease;
+}
+
+.shopPagina section details summary {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-shop-border);
+	padding: 0.3em 0.7em;
+}
+
+.shopPagina details h2 {
+	font-family: var(--shopDeco-lettertype);
+	font-size: 0.8em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.shopPagina details p {
+	font-size: 0.9em;
+	line-height: 1.3em;
+	color: var(--color-shop-text);
+}
+
+.shopPagina details p strong{
+	font-weight: bold;
+}
+
+.shopPagina details h3 {
+	font-family: var(--shopDeco-lettertype);
+	font-size: 0.9em;
+	font-weight: bold;
+	color: var(--color-shop-text);
+	padding-top: 1.7em;
+}
+
+.shopPagina details ul {
+	list-style-type: none;
+	margin: 0em;
+}
+
+.shopPagina details ul li {
+	font-family: var(--hoofd-lettertype);
+	font-size: 0.9em;
+}
+
+.shopPagina footer {
+	margin-top: 3em;
+}
+.shopPagina footer details > ul {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	gap: 1.8em;
+	padding: 0.5em 0em;
+	margin: 0em;
+}
+.shopPagina footer ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	justify-items: center;
+}
+.shopPagina footer ul img {
+	width: 3.5em;
+	height: auto;
 }
 
 
 
 
-
+/* ---@media--hoofdPagina--- */
 
 @media (width >= 749px) {
+	h2 {
+		font-size: 2.3em;
+	}
+
 	.starterCarousel li {
 		min-width: 100vw;      
     	height: 31em; 
@@ -872,16 +1213,10 @@ hr {
 	.starterCarousel p:first-of-type {
 		font-size: 0.8em;
 	}
-	.starterCarousel h2 {
-		font-size: 2.3em;
-	}
 	.starterCarousel div a {
 		font-size: 1em;
 	}
 
-	.wilJeLezen h2 {
-		font-size: 2.3em;
-	}
 	.artikel_groot {
 		flex-direction: row;
 	}
@@ -923,11 +1258,10 @@ hr {
 	}
 
 	.populairDezeWeek {
-		padding: 5em 1.3em 7em 2em;
+		padding: 5em 1.3em 0em 2em;
 	}
 	.populairDezeWeek h2 {
 		justify-content: center;
-		font-size: 2.3em;
 	}
 	.populairDezeWeek article img {
 		width: 20em;
@@ -941,31 +1275,218 @@ hr {
 		padding: 0em;
 	}
 
-
-	
-	
-	
-
-	
-	
-    
-
-
-
-
-	
+	.carousel_originals {
+		justify-content: center;
+	}
+	.andc_originals h2 {
+		padding-top: 1em;
+		margin-top: 1em;
+	}
+	.section_magazines h2 {
+		padding: 0em 2em;
+	}
 }
 
 
+@media (width >= 1169px) {
+	main {
+		padding: 0em 8em;
+		margin: 0;
+	}
+	.headerHome {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+		align-items: center;
+    }
+	.headerHome a:first-of-type {
+		grid-column: 1;
+		grid-row: 1;
+	}
+	.headerHome nav {
+		grid-column: 2;
+		grid-row: 1;
+	}
+	.headerHome a:nth-of-type(2) {
+		grid-column: 3;
+		grid-row: 1;
+	}
+	.starterCarousel li {
+		min-width: 100vw;      
+    	height: 31em;
+		padding: 0em 8em 0em 0em;
+	}
+	.starterCarousel ul div {
+		padding: 6em 28em 2em 20em;
+	}
 
+	.wilJeLezen {
+		display: grid;
+		grid-template-columns: 45em 28em;
+	}
+	.wilJeLezen h2{
+		grid-column-start:1;
+		grid-column-end: 3;
+	}
+	.wilJeLezen div {
+		grid-column: 1;
+	}
+	.artikel_groot {
+		height: 15.7em;
+	}
+	.artikel_groot img {
+		height: 15.6em;
+	}
+	.artikel_klein {
+		height: 8.4em;
+		margin-top: 0.8em;
+	}
+	.section_shopNu {
+		display: flex;
+        flex-direction: column;
+		grid-column: 2;
+		gap: 0.5em 0em;
+	}
+}
 
+/* ---@media--shopPagina--- */
 
+@media (width >=767px) {
+	.shopPagina h1{
+		font-size: 1.2em;
+	}
+	.shopPagina section {
+		display: flex;
+		flex-direction: row;
+	}
+	.shopPagina section > img {
+		width: 15em;
+		height: 19em;
+		margin: 4em 3em 7em 5em;
+	}
+	.shopPagina section details {
+		width: 22em;
+	}
+	.shopPagina section a:first-of-type {
+		font-size: 1em;
+	}
+	.shopPagina section > div > p:nth-of-type(1) {
+		font-size: 0.85em;
+	}
+}
 
+@media (width >=1025px) {
+	
+	.shopPagina header {
+		margin: 0em 5em;
+	}
+	.shopPagina header > a {
+		order: 1;
+		margin: 0;
+	}
+	.shopPagina header > button:nth-of-type(1) {
+		display: none;
+	}
+	.shopPagina header > button:nth-of-type(2) {
+		order: 3;
+	}
+	.shopPagina header > button:nth-of-type(3) {
+		order: 4;
+		padding-left: 0.9em;
+	}
+	.shopPagina header > button:nth-of-type(4) {
+		display: block;
+		order: 5;
+		padding-left: 1.2em;
+	}
+	.shopPagina header > button:nth-of-type(5) {
+		order: 6;
+	}
 
+	.shopPagina header nav {
+		display: flex;
+		align-items: center;
+		position:static;
+		translate:unset;
+		padding:0;
+		background:none;
+		order: 2;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.shopPagina header nav a {
+		font-size: 0.7em;
+		transition: all .3s ease-in-out;
+	}
+	.shopPagina header nav a:hover {
+		color: #d2a187;
+		opacity: 0.8;
+	}
+	.shopPagina header nav button {
+		display: none;
+	}
+	.shopPagina header nav details summary img{
+		display: none;
+	}
+	
+	.shopPagina header ul li{
+		border-bottom: none;
+	}
+	.shopPagina header ul li:nth-child(3){
+		border-bottom: none;
+	}
+	.shopPagina header nav ul li:nth-last-child(-n+3) {
+		display: none;
+	}
+	.shopPagina header nav ul{
+		display: flex;
+		flex-direction: row;
+	}	
 
+	.shopPagina section > img {
+		width: 17.5em;
+		height: 23em;
+		margin: 5em 5em 10em 8em;
+	}
+	.shopPagina section {
+		margin: 3em 10em 0em 0em;
+	}
+	.shopPagina section details {
+		width: 30em;
+	}
+	.shopPagina section a:first-of-type {
+		font-size: 1.1em;
+	}
+	.shopPagina h1{
+		font-size: 1.3em;
+	}
+	.shopPagina section > div > p:nth-of-type(1) {
+		font-size: 1em;
+	}
+}
 
-
-
-
-
-
+@media (prefers-color-scheme:dark) {
+	:root {
+	--color-text: #fff;
+	--color-background: #0E1218;
+	--color-datum-tijd: #f1f1f3;
+	--color-shop-text: #ffffff;
+	}
+	.starterCarousel h2 {
+		color: #fff;
+	}
+	.section_magazines {
+		background-color: #af7f63;
+	}
+	.shopPagina main > ul:first-of-type li a  {
+		color: black;
+	}
+	.shopPagina section a:first-of-type {
+		color: #fff;
+	}
+	.shopPagina h1{
+		color: #fff;
+	}
+	.shopPagina section > div > p:nth-of-type(1) {
+		color: #fff;
+	}
+}

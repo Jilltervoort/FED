@@ -14,17 +14,54 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-	<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+	<link rel="icon" type="image/svg+xml" href="images/logo_Andc.png">
 </head>
 
 <body class="shopPagina">
 	
+	<!-- BRON: week 5: Dé JS 3-stap oefening 2 - Hamburger menu -->
 	<header>
-		<button><img src="images/headerShop_burgermenu.png" alt=""></button>
-		<button><img src="images/headerShop_vergrootglas.png" alt=""></button>
-		<button><img src="images/headerShop_profiel.png" alt=""></button>
-		<button><img src="images/headerShop_favorieten.png" alt=""></button>
-		<button><img src="images/headerShop_winkelmand.png" alt=""></button>
+		<button class="menu-open"><img src="images/headerShop_burgermenu.png" alt="Open het menu"></button>
+
+		<a href="index.html" aria-label="Ga naar de homepagina"><img src="images/logo_Andc.png" alt="Logo van &C Magazine"></a>
+
+		<nav>
+			<button class="menu-sluit"><img src="images/headerShop_sluiten.png" alt="">Menu&nbsp;sluiten</button>
+		  
+			<ul>
+			  	<li>
+					<details>
+						<summary><a href="#">&amp;C&nbsp;the&nbsp;magazine</a><img src="images/pijltje_naarBeneden.png" alt=""></summary>
+						<ul>
+							<li><a href="#">Losse edities</a></li>
+							<li><a href="#">Specials</a></li>
+							<li><a href="#">Abonnement</a></li>
+						</ul>
+					</details>
+			  	</li>
+			  	<li>
+					<details>
+						<summary><a href="#">collections</a><img src="images/pijltje_naarBeneden.png" alt=""></summary>
+						<ul>
+							<li><a href="#">Chantal &amp; Tina</a></li>
+							<li><a href="#">&amp;C X Janzen</a></li>
+							<li><a href="#">&amp;C the collection</a></li>
+							<li><a href="#">&amp;C X Hallmark</a></li>
+						</ul>
+					</details>
+			  	</li>
+				<li><a href="#">abonnementen</a></li>
+				<li><a href="#">Login</a></li>
+				<li><a href="#">Nu registreren</a></li>
+				<li><a href="#">Verlanglijst</a></li>
+			</ul>
+		</nav>
+
+
+		<button><img src="images/headerShop_vergrootglas.png" alt="Zoeken"></button>
+		<button><img src="images/headerShop_profiel.png" alt="Profiel"></button>
+		<button><img src="images/headerShop_favorieten.png" alt="Favorieten"></button>
+		<button><img src="images/headerShop_winkelmand.png" alt="Winkelmand"></button>
 
 	</header>
 
@@ -37,59 +74,50 @@
 
 		<section>
 			
-			<img src="images/shop_winterboek.jpg" alt="">
+			<img src="images/shop_winterboek.jpg" alt="&amp;C's Winterboek 2025">
 
 			<div>
 				<a href="#">&amp;C the magazine</a>
 				<h1>&amp;C's Winterboek 2025</h1>
 				<p>&euro; 7,95</p>
 
-				<a><img>Beschikbaar in verlanglijst</a>
+				<button><img src="images/hartjeShop.png" alt="">Zet op je verlanglijst</button>
 				
-				<button>&minus;</button>
-				<p></p>
-				<button>&plus;</button>
+				<div>
+					<div class="shopButton_aantal">
+						<button>&minus;</button>
+						<p>1</p>
+						<button>&plus;</button>
+					</div>
 
-				<button>Toevoegen aan winkelmand</button>
+					<button>Toevoegen aan winkelmand</button>
+				</div>
 
 				<details open>
-					<summary><h2>Product details</h2><img></summary>
+					<summary><h2>Product details</h2><img src="images/pijltje_naarBeneden.png" alt=""></summary>
 						<p><strong>Yvonne Coldeweijer</strong> keert terug, en hoe! Ze gooit álles op tafel over de afgelopen jaren én haar geruchtmakende toekomstplannen. <strong>Chantal</strong> blikt terug op haar mooiste feestdagenherinneringen en laat zien dat geluk in de kleine dingen zit. Verder duiken we in de wereld van true crime: waarom zijn we er zo door gefascineerd?</p>
 				</details>
 
 				<details>
-					<summary><h2>verzenden &amp; retourneren</h2><img></summary>
+					<summary><h2>verzenden &amp; retourneren</h2><img src="images/pijltje_naarBeneden.png" alt=""></summary>
 					<h3>Verzenden</h3>
 					<p>Bestellingen op werkdagen worden binnen twee dagen geleverd.</p>
 				
 					<ul>
-					<li>&euro; 3,95: standaard verzending binnen Nederland.</li>
-					<li>&euro; 7: verzending naar België.</li>
+						<li>&euro; 3,95: standaard verzending binnen Nederland.</li>
+						<li>&euro; 7: verzending naar België.</li>
 					</ul>
 				
 					<p>Gratis verzending boven de &euro; 150.</p>
 				
 					<h3>Retourneren</h3>
-					<p>
-					Retourneren mag bij &amp;C binnen 30 dagen nadat je de items ontvangen hebt.
-					Ben je op het item gaan zitten, heeft je cavia er een hap uit genomen of 
-					heeft je schoonmoeder er koffie over gemorst? Helaas, alle items moeten zich 
-					in originele staat bevinden, inclusief (prijs)kaartjes, en mogen niet gewassen zijn.
-					</p>
-			  
-					<p>
-					Kosten voor de retourzending worden niet vergoed door &amp;C. Wij schatten dat
-					de verzendkosten maximaal &euro; 6,95 zullen bedragen. Je ontvangt het 
-					retourbedrag (inclusief leveringskosten voor de heenzending) zo snel mogelijk 
-					terug op je rekening, uiterlijk binnen 14 dagen.
-					</p>
+					<p>Retourneren mag bij &amp;C binnen 30 dagen nadat je de items ontvangen hebt. Ben je op het item gaan zitten, heeft je cavia er een hap uit genomen of heeft je schoonmoeder er koffie over gemorst? Helaas, alle items moeten zich in originele staat bevinden, inclusief (prijs)kaartjes, en mogen niet gewassen zijn. Kosten voor de retourzending worden niet vergoed door &amp;C. Wij schatten dat de verzendkosten maximaal &euro; 6,95 zullen bedragen. Je ontvangt het retourbedrag (inclusief leveringskosten voor de heenzending) zo snel mogelijk terug op je rekening, uiterlijk binnen 14 dagen.</p>
 				</details>
 			</div>
 		</section>
 	</main>
 
 	<footer>
-		<h4>&amp;C the webshop</h4>
 
 		<details>
 			<summary><h4>over &amp;C</h4><img src="images/pijltje_footer.png" alt=""></summary>
@@ -121,6 +149,19 @@
 			</ul>
 		</details>
 
+		<h4>About Us</h4>
+
+		<p>&amp;C (and see) is het 360° mediamerk van Chantal Janzen met een maandelijks magazine, website, online shop, eigen tv-programma’s en live events.</p>
+		
+		<ul>
+			<li><a href="#"><img src="images/footer_facebook.png" alt="Facebook"></a></li>
+			<li><a href="#"><img src="images/footer_instagram.png" alt="Instagram"></a></li>
+			<li><a href="#"><img src="images/footer_tiktok.png" alt="Tiktok"></a></li>
+			<li><a href="#"><img src="images/footer_youtube.png" alt="Youtube"></a></li>
+			<li><a href="#"><img src="images/footer_nieuwsbrief.png" alt="Nieuwsbrief"></a></li>
+		</ul>
+		
+		<p>Copyright © 2025 andc</p>
 
 	</footer>
 
